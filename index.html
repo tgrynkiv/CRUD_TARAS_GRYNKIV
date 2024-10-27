@@ -31,15 +31,6 @@
 
     <script>
 
-        // function afegir_fruita() {
-        //     let fruites = document.getElementById("fruites");
-        //     let newTd = document.createElement("li");
-        //     var afegir = document.getElementById("afegir").value;
-        //     var node = document.createTextNode(afegir);
-        //     newTd.appendChild(node);
-        //     fruites.appendChild(newTd);
-        // }
-
         function afegir_fruita() {
             let fruites = document.getElementById("fruites");
             let afegir = document.getElementById("afegir").value;
@@ -53,7 +44,14 @@
             const fruites = document.getElementById("fruites");
             const pos_array = document.getElementById("eliminar").value;
             fruites.removeChild(fruites.children[pos_array]);
-         }
+        }
+
+        function modificar_fruita() {
+            const fruites = document.getElementById("fruites");
+            const pos_array = document.getElementById("modificar_fruita_pos").value;
+            const mod_fruita = document.getElementById("canviar_fruita").value;
+            fruites.children[pos_array].textContent = mod_fruita;
+        }
     
     </script>
 
@@ -64,22 +62,23 @@
     <div class="main">
 
        
-            <label for="">Afegir</label>
+            <label for="">Afegir fruita a la llista</label><br>
             <input  type="text" name="text" id="afegir" placeholder="Exemple: poma">
             <button type="submit" id="boto" onclick="afegir_fruita();">Afegir</button>
             <br>
 
 
-            <label for="">Eliminar per Posicio (Array)</label>
+            <label for="">Eliminar fruita per posicio (Array)</label><br>
             <input type="number" id="eliminar" placeholder="Posicio a eliminar">
             <button type="submit" id="boto" onclick="eliminar_fruita();">Eliminar</button>
             <br>
 
-            <label for="">Posicio a canviar de text</label>
-            <input type="number" id="modificar" placeholder="Posicio a canviar"><br>
-            <label for="">Text a modificar</label>
-            <input type="text" id="modificar_text" placeholder="Text a canviar">
-            <button type="submit" id="boto">Canviar</button>
+           
+            <label for="">Modificar una fruita de la llista</label><br>
+            <input type="text" id="canviar_fruita" placeholder="Nom de la fruita"><br>
+            <label for="">Posicio de la fruita que es modificara</label><br>
+            <input type="number" id="modificar_fruita_pos" placeholder="Posicio de la fruita">
+            <button type="submit" id="boto" onclick="modificar_fruita();">Canviar</button>
        
 
         <h2>Elements de la llista</h2>
