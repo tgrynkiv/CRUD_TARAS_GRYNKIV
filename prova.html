@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function afegir_fruita() {
+            let fruites = document.getElementById("fruites");
+            let newTd = document.createElement("li");
+            var afegir = document.getElementById("afegir").value;
+            var node = document.createTextNode(afegir);
+            newTd.appendChild(node);
+            fruites.appendChild(newTd);
+        }
+    
+    </script>
+
+<div class="header">
+    <h1>CRUD TARAS GRYNKIV</h1>
+</div>
+
+
+    <div>
+
+        <form>
+        <label for="">Afegir</label>
+        <input  type="text" name="text" id="afegir" placeholder="Exemple: poma">
+        <button type="submit" id="button" onclick="afegir_fruita();">Afegir</button>
+        <br>
+
+        <label for="">Eliminar per Posicio</label>
+        <input type="number" id="eliminar" placeholder="Posicio a eliminar">
+        <button type="submit" id="button">Eliminar</button>
+        <br>
+
+        <label for="">Posicio a canviar</label>
+        <input type="number" id="modificar" placeholder="Posicio a canviar"><br>
+        <label for="">Text a modificar</label>
+        <input type="text" id="modificar_text" placeholder="Text a canviar">
+        <button type="submit" id="button">Canviar</button>
+        
+    </form>
+    <h2>Elements de la llista</h2>
+
+    <ul id="fruites">  
+                
+    </ul>
+
+</div>
+
+
+</body>
+</html> 
